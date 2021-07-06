@@ -6,6 +6,16 @@
 
 </div>
 
+<br><br>
+
+Beautifully animated, somewhat responsive, not focused on accessibility. Just a bit of experimentation!
+
+**Preview:**
+
+![Preview](./docs/preview.png)
+
+<br><br>
+
 ## Asset sources
 
 ### Images
