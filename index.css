@@ -1,3 +1,5 @@
+/* Global */
+
 html {
   width: 100%;
   height: 100%;
@@ -10,114 +12,95 @@ body {
   background-color: #000;
 }
 
+/* Games */
+
 .games {
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
 }
+
+/* Game */
 
 .game {
   position: relative;
   flex: 2;
   width: 100%;
   height: 100%;
-  transition: flex 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: flex 0.4s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: grayscale(50%) blur(5px);
+  will-change: flex, background-color;
 }
 
 .game.is-active {
   flex: 3;
+  background-color: transparent;
+  backdrop-filter: none;
 }
 
-/* Full image */
+.game.is-active::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 70%;
+  top: 15%;
+  left: -3px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
 
-.game__full-image {
+.game.is-active::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 70%;
+  top: 15%;
+  right: -3px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* Game image */
+
+.game__image {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -2;
+  pointer-events: none;
 }
 
-.game__full-image--left {
-  left: 0;
+.game__image--left {
   object-position: left center;
+  transform-origin: left center;
 }
 
-.game__full-image--center {
-  left: 50%;
+.game__image--center {
   object-position: center center;
-  transform: translateX(-50%);
-}
-
-.game__full-image--right {
-  right: 0;
-  object-position: right center;
-}
-
-.game .game__full-image {
-  opacity: 0;
-}
-
-.game.is-active .game__full-image {
-  opacity: 1;
-}
-
-/* Small image */
-
-.game__small-image {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: saturate(100%);
-}
-
-.game__small-image--left {
-  left: 0;
-  object-position: left center;
-  clip-path: inset(0 70.1% 0 0); /* TODO: How to calculate? */
-  transform-origin: calc(100% / 7 * 3) center;
-}
-
-.game__small-image--center {
-  left: 0;
-  object-position: center center;
-  clip-path: inset(0 35.05% 0 35.05%); /* TODO: How to calculate? */
   transform-origin: center center;
-  /* transform: translateX(-50%); */
 }
 
-.game__small-image--right {
-  right: 0;
+.game__image--right {
   object-position: right center;
-  clip-path: inset(0 0 0 70.1%); /* TODO: How to calculate? */
-  /* clip-path: inset(0 0 0 calc(100% - (100% / 7 * 2))); */
-  transform-origin: calc(100% - (100% / 7 * 3)) center;
+  transform-origin: right center;
 }
 
-.game .game__small-image {
+.game .game__image {
   opacity: 0;
-  transform: scale(1.1);
-  transition: clip-path 0s linear, transform 0s linear;
+  transform: scale(1.03);
+  transition: transform 0s linear;
+  will-change: transform;
 }
 
-.game.is-active .game__small-image {
+.game.is-active .game__image {
   opacity: 1;
   transform: scale(1);
-  transition: clip-path 0.4s cubic-bezier(0.23, 1, 0.32, 1), transform 5s ease-in-out;
-}
-
-.game.is-active .game__small-image--left {
-  clip-path: inset(0 calc(100% - (100% / 7 * 3)) 0 0);
-}
-
-.game.is-active .game__small-image--center {
-  clip-path: inset(0 calc(100% / 7 * 2) 0 calc(100% / 7 * 2));
-}
-
-.game.is-active .game__small-image--right {
-  clip-path: inset(0 0 0 calc(100% - (100% / 7 * 3)));
+  transition: transform 2s cubic-bezier(0.23, 1, 0.32, 1);
 }
