@@ -10,7 +10,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "rimraf ./dist && parcel build ./index.html",
+    "build": "rimraf ./dist && parcel build ./index.html --public-url ./",
     "start": "rimraf ./dist && parcel ./index.html"
   },
   "devDependencies": {
