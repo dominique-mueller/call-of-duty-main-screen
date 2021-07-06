@@ -1,0 +1,20 @@
+{
+  "name": "call-of-duty-main-screen",
+  "description": "A recreation of the Call of Duty main screen in HTML / CSS / JavaScript.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dominique-mueller/call-of-duty-main-screen"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rimraf ./dist && parcel build ./index.html",
+    "start": "rimraf ./dist && parcel ./index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.x",
+    "rimraf": "3.0.x"
+  }
+}
