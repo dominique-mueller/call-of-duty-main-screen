@@ -4,11 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./index.css" />
     <title>Call of Duty</title>
   </head>
   <body>
-    TODO
+    <div class="games">
+      <div class="game" style="background-color: rgba(0, 0, 255, 0.2)" data-id="game">
+        <!-- <span>Cold War</span> -->
+        <img
+          class="game__full-image game__full-image--left"
+          width="3840px"
+          height="2160px"
+          src="./assets/call-of-duty-black-ops-cold-war.jpg"
+          alt=""
+        />
+        <img
+        class="game__small-image game__small-image--left"
+        width="3840px"
+        height="2160px"
+        src="./assets/call-of-duty-black-ops-cold-war.jpg"
+        alt=""
+      />
+      </div>
+
+      <div class="game is-active" style="background-color: rgba(255, 0, 0, 0.2)" data-id="game">
+        <!-- <span>Warzone</span> -->
+        <img
+          class="game__full-image game__full-image--center"
+          width="3840px"
+          height="2160px"
+          src="./assets/call-of-duty-warzone.jpg"
+          alt=""
+        />
+        <img
+          class="game__small-image game__small-image--center"
+          width="3840px"
+          height="2160px"
+          src="./assets/call-of-duty-warzone.jpg"
+          alt=""
+        />
+      </div>
+
+      <div class="game" style="background-color: rgba(0, 255, 0, 0.2)" data-id="game">
+        <!-- <span>Modern Warfare</span> -->
+        <img
+          class="game__full-image game__full-image--right"
+          width="3840px"
+          height="2160px"
+          src="./assets/call-of-duty-modern-warfare.jpg"
+          alt=""
+        />
+        <img
+          class="game__small-image game__small-image--right"
+          width="3840px"
+          height="2160px"
+          src="./assets/call-of-duty-modern-warfare.jpg"
+          alt=""
+        />
+      </div>
+    </div>
   </body>
 </html>
