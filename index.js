@@ -4,10 +4,10 @@ console.log(gameElements);
 
 Array.from(gameElements).forEach((gameElement) => {
   gameElement.addEventListener('mouseover', (event) => {
-    event.target.classList.add('is-active');
+    gameElement.classList.add('is-active');
     Array.from(gameElements)
-      .filter((gameElement) => {
-        return gameElement !== event.target;
+      .filter((globalGameElement) => {
+        return globalGameElement !== gameElement;
       })
       .forEach((otherGameElemenet) => {
         otherGameElemenet.classList.remove('is-active');
